@@ -6,152 +6,64 @@
 <title>SVMilk - Smart Dairy Business</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial, sans-serif;
+}
 
 body{
-    font-family:Arial,sans-serif;
-    background:#f4f8f7;
-    color:#1f2937;
+    background:#f4f7fb;
+    color:#222;
 }
 
 header{
-    background:#087f5b;
+    background:#0b6bcb;
     color:white;
-    padding:20px;
-    text-align:center;
+    padding:18px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-header h1{font-size:32px}
-header p{margin-top:6px}
+.logo{
+    font-size:26px;
+    font-weight:bold;
+}
+
+.tagline{
+    font-size:13px;
+    opacity:.9;
+}
 
 nav{
     background:white;
     padding:12px;
     display:flex;
-    gap:8px;
+    gap:10px;
     flex-wrap:wrap;
-    justify-content:center;
-    box-shadow:0 2px 8px #0001;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
 }
 
 nav button{
-    border:0;
+    border:none;
+    background:#eef5ff;
+    color:#075bab;
     padding:10px 15px;
     border-radius:8px;
-    background:#e8f5f1;
-    color:#087f5b;
-    font-weight:bold;
     cursor:pointer;
+    font-weight:bold;
+}
+
+nav button:hover{
+    background:#dcecff;
 }
 
 .container{
-    max-width:1100px;
+    max-width:1200px;
     margin:auto;
     padding:25px;
-}
-
-.section{
-    margin-top:25px;
-}
-
-.dashboard{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:15px;
-    margin-top:15px;
-}
-
-.card{
-    background:white;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 3px 10px #00000010;
-}
-
-.card h3{
-    color:#087f5b;
-    margin-bottom:10px;
-}
-
-.big{
-    font-size:25px;
-    font-weight:bold;
-}
-
-input,select{
-    width:100%;
-    padding:11px;
-    margin:6px 0;
-    border:1px solid #ccd5d2;
-    border-radius:8px;
-}
-
-.form-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-}
-
-button.primary{
-    background:#087f5b;
-    color:white;
-    border:0;
-    padding:11px 18px;
-    border-radius:8px;
-    cursor:pointer;
-    margin-top:8px;
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-}
-
-th,td{
-    padding:11px;
-    border-bottom:1px solid #eee;
-    text-align:left;
-}
-
-.table-box{
-    background:white;
-    padding:15px;
-    border-radius:12px;
-    overflow:auto;
-}
-
-.products{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:15px;
-}
-
-.product{
-    background:white;
-    padding:20px;
-    border-radius:12px;
-    text-align:center;
-    box-shadow:0 3px 10px #00000010;
-}
-
-.icon{
-    font-size:45px;
-    margin-bottom:10px;
-}
-
-.price{
-    color:#087f5b;
-    font-weight:bold;
-    margin-top:8px;
-}
-
-.badge{
-    display:inline-block;
-    padding:5px 9px;
-    background:#e8f5f1;
-    color:#087f5b;
-    border-radius:15px;
-    font-size:12px;
 }
 
 .page{
@@ -162,15 +74,168 @@ th,td{
     display:block;
 }
 
-footer{
+h2{
+    margin-bottom:18px;
+    color:#075bab;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.card h3{
+    color:#666;
+    font-size:15px;
+    margin-bottom:8px;
+}
+
+.card p{
+    font-size:25px;
+    font-weight:bold;
+    color:#075bab;
+}
+
+.form-box{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    margin-bottom:20px;
+}
+
+input,select{
+    width:100%;
+    padding:11px;
+    margin:7px 0 12px;
+    border:1px solid #ccc;
+    border-radius:7px;
+}
+
+.btn{
+    background:#0b6bcb;
+    color:white;
+    border:none;
+    padding:11px 18px;
+    border-radius:7px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.btn.green{
+    background:#168a45;
+}
+
+.btn.red{
+    background:#d93636;
+}
+
+.btn.orange{
+    background:#e88900;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    margin-top:15px;
+}
+
+th,td{
+    padding:11px;
+    border-bottom:1px solid #ddd;
+    text-align:left;
+}
+
+th{
+    background:#eef5ff;
+    color:#075bab;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.product{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.product h3{
+    margin-bottom:8px;
+}
+
+.price{
+    color:#168a45;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.stock{
+    margin:8px 0;
+    color:#555;
+}
+
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #ddd;
+    padding:12px 0;
+}
+
+.total{
+    font-size:24px;
+    font-weight:bold;
+    color:#075bab;
+    margin:15px 0;
+}
+
+.badge{
+    display:inline-block;
+    padding:5px 9px;
+    border-radius:15px;
+    font-size:12px;
+    background:#e8f3ff;
+    color:#075bab;
+}
+
+.empty{
     text-align:center;
-    padding:25px;
+    padding:20px;
     color:#777;
 }
 
 @media(max-width:600px){
-    .form-grid{
-        grid-template-columns:1fr;
+    .container{
+        padding:15px;
+    }
+
+    header{
+        flex-direction:column;
+        gap:5px;
+        align-items:flex-start;
+    }
+
+    table{
+        font-size:13px;
+    }
+
+    th,td{
+        padding:7px;
     }
 }
 </style>
@@ -179,98 +244,98 @@ footer{
 <body>
 
 <header>
-    <h1>🥛 SVMilk</h1>
-    <p>Fresh Dairy • Smart Business</p>
+    <div>
+        <div class="logo">🥛 SVMilk</div>
+        <div class="tagline">Fresh Dairy • Smart Business</div>
+    </div>
 </header>
 
 <nav>
-    <button onclick="openPage('dashboard')">Dashboard</button>
-    <button onclick="openPage('customers')">Customers</button>
-    <button onclick="openPage('ledger')">Credit Ledger</button>
-    <button onclick="openPage('products')">Products</button>
+    <button onclick="openPage('dashboard')">🏠 Dashboard</button>
+    <button onclick="openPage('customers')">👥 Customers</button>
+    <button onclick="openPage('products')">🥛 Products</button>
+    <button onclick="openPage('sales')">🛒 Sales</button>
+    <button onclick="openPage('cart')">🛍️ Cart</button>
+    <button onclick="openPage('ledger')">💳 Credit Ledger</button>
 </nav>
 
 <div class="container">
 
 <!-- DASHBOARD -->
 
-<div id="dashboard" class="page active">
+<section id="dashboard" class="page active">
 
 <h2>Business Dashboard</h2>
 
-<div class="dashboard">
+<div class="cards">
 
 <div class="card">
-<h3>Customers</h3>
-<div class="big" id="totalCustomers">0</div>
+<h3>Total Customers</h3>
+<p id="dashboardCustomers">0</p>
+</div>
+
+<div class="card">
+<h3>Total Products</h3>
+<p id="dashboardProducts">0</p>
+</div>
+
+<div class="card">
+<h3>Total Sales</h3>
+<p id="dashboardSales">₹0</p>
 </div>
 
 <div class="card">
 <h3>Total Udhaari</h3>
-<div class="big" id="totalCredit">₹0</div>
+<p id="dashboardCredit">₹0</p>
 </div>
 
 <div class="card">
 <h3>Total Payments</h3>
-<div class="big" id="totalPayments">₹0</div>
-</div>
-
-<div class="card">
-<h3>Products</h3>
-<div class="big">4</div>
+<p id="dashboardPayments">₹0</p>
 </div>
 
 </div>
 
-<div class="section card">
+<div class="form-box">
 
 <h3>Welcome to SVMilk</h3>
 
-<p>
-SVMilk is a smart dairy business management platform.
-Manage customers, milk sales and credit ledger from one place.
+<p style="margin-top:10px;">
+Fresh Dairy • Smart Business
+</p>
+
+<p style="margin-top:10px;color:#666;">
+Manage customers, products, sales, stock and credit ledger from one place.
 </p>
 
 </div>
 
-</div>
+</section>
 
 
 <!-- CUSTOMERS -->
 
-<div id="customers" class="page">
+<section id="customers" class="page">
 
-<h2>👤 Customer Management</h2>
+<h2>Customer Management</h2>
 
-<div class="section card">
+<div class="form-box">
 
-<h3>Add New Customer</h3>
+<h3>Add Customer</h3>
 
-<div class="form-grid">
+<input id="customerName" placeholder="Customer Name">
 
-<div>
-<label>Customer Name</label>
-<input id="customerName" placeholder="Enter customer name">
-</div>
+<input id="customerMobile" placeholder="Mobile Number">
 
-<div>
-<label>Mobile Number</label>
-<input id="customerPhone" placeholder="Enter mobile number">
-</div>
-
-</div>
-
-<button class="primary" onclick="addCustomer()">
-+ Add Customer
+<button class="btn" onclick="addCustomer()">
+Add Customer
 </button>
 
 </div>
 
-<div class="section">
+<div class="form-box">
 
 <h3>Customer List</h3>
-
-<div class="table-box">
 
 <table>
 
@@ -288,57 +353,172 @@ Manage customers, milk sales and credit ledger from one place.
 
 </div>
 
-</div>
-
-</div>
+</section>
 
 
-<!-- CREDIT LEDGER -->
+<!-- PRODUCTS -->
 
-<div id="ledger" class="page">
+<section id="products" class="page">
 
-<h2>💰 Credit Ledger / Udhaari</h2>
+<h2>Product Management</h2>
 
-<div class="section card">
+<div class="form-box">
 
-<h3>New Ledger Entry</h3>
+<h3>Add New Dairy Product</h3>
 
-<label>Customer</label>
+<input id="productName" placeholder="Product Name">
 
-<select id="ledgerCustomer">
-<option value="">Select Customer</option>
+<input id="productPrice" type="number" placeholder="Price">
+
+<input id="productStock" type="number" placeholder="Stock Quantity">
+
+<select id="productUnit">
+
+<option value="Litre">Litre</option>
+<option value="Kg">Kg</option>
+<option value="Packet">Packet</option>
+<option value="Piece">Piece</option>
+
 </select>
 
-<label>Transaction Type</label>
-
-<select id="ledgerType">
-<option value="credit">Credit / Udhaari Added</option>
-<option value="payment">Payment Received</option>
-</select>
-
-<label>Amount</label>
-
-<input id="ledgerAmount" type="number" placeholder="Enter amount">
-
-<label>Description</label>
-
-<input id="ledgerDescription" placeholder="Milk / Paneer / Payment etc.">
-
-<button class="primary" onclick="addLedgerEntry()">
-Save Transaction
+<button class="btn" onclick="addProduct()">
+Add Product
 </button>
 
 </div>
 
-<div class="section">
+<div id="productGrid" class="product-grid"></div>
 
-<h3>Transaction History</h3>
+</section>
 
-<div class="table-box">
+
+<!-- SALES -->
+
+<section id="sales" class="page">
+
+<h2>Sales History</h2>
+
+<div class="form-box">
 
 <table>
 
 <thead>
+
+<tr>
+<th>Date</th>
+<th>Customer</th>
+<th>Items</th>
+<th>Total</th>
+<th>Payment</th>
+</tr>
+
+</thead>
+
+<tbody id="salesTable"></tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- CART -->
+
+<section id="cart" class="page">
+
+<h2>Shopping Cart / New Sale</h2>
+
+<div class="form-box">
+
+<h3>Select Customer</h3>
+
+<select id="saleCustomer">
+
+<option value="">Walk-in Customer</option>
+
+</select>
+
+</div>
+
+<div class="form-box">
+
+<h3>Add Product to Cart</h3>
+
+<select id="saleProduct"></select>
+
+<input id="saleQuantity" type="number" min="1" value="1">
+
+<button class="btn" onclick="addToCart()">
+Add to Cart
+</button>
+
+</div>
+
+<div class="form-box">
+
+<h3>Cart</h3>
+
+<div id="cartItems"></div>
+
+<div class="total">
+Total: ₹<span id="cartTotal">0</span>
+</div>
+
+<select id="paymentType">
+
+<option value="Cash">Cash Payment</option>
+<option value="Payment">Payment Received</option>
+<option value="Credit">Udhaari / Credit</option>
+
+</select>
+
+<button class="btn green" onclick="completeSale()">
+Complete Sale
+</button>
+
+</div>
+
+</section>
+
+
+<!-- LEDGER -->
+
+<section id="ledger" class="page">
+
+<h2>Credit Ledger / Udhaari</h2>
+
+<div class="form-box">
+
+<h3>Ledger Entry</h3>
+
+<select id="ledgerCustomer"></select>
+
+<select id="ledgerType">
+
+<option value="credit">Udhaari / Credit</option>
+<option value="payment">Payment Received</option>
+
+</select>
+
+<input id="ledgerAmount" type="number" placeholder="Amount">
+
+<input id="ledgerDescription" placeholder="Description">
+
+<button class="btn" onclick="addLedgerEntry()">
+Add Ledger Entry
+</button>
+
+</div>
+
+<div class="form-box">
+
+<h3>Transaction History</h3>
+
+<table>
+
+<thead>
+
 <tr>
 <th>Date</th>
 <th>Customer</th>
@@ -346,6 +526,7 @@ Save Transaction
 <th>Amount</th>
 <th>Description</th>
 </tr>
+
 </thead>
 
 <tbody id="ledgerTable"></tbody>
@@ -354,56 +535,9 @@ Save Transaction
 
 </div>
 
-</div>
+</section>
 
 </div>
-
-
-<!-- PRODUCTS -->
-
-<div id="products" class="page">
-
-<h2>🥛 Dairy Products</h2>
-
-<div class="products">
-
-<div class="product">
-<div class="icon">🥛</div>
-<h3>Fresh Milk</h3>
-<p class="price">₹60 / Litre</p>
-<span class="badge">Available</span>
-</div>
-
-<div class="product">
-<div class="icon">🧀</div>
-<h3>Paneer</h3>
-<p class="price">₹320 / Kg</p>
-<span class="badge">Available</span>
-</div>
-
-<div class="product">
-<div class="icon">🧈</div>
-<h3>Butter</h3>
-<p class="price">₹580 / Kg</p>
-<span class="badge">Available</span>
-</div>
-
-<div class="product">
-<div class="icon">🥣</div>
-<h3>Curd</h3>
-<p class="price">₹80 / Kg</p>
-<span class="badge">Available</span>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<footer>
-© 2026 SVMilk • Fresh Dairy • Smart Business
-</footer>
 
 
 <script>
@@ -411,8 +545,50 @@ Save Transaction
 let customers =
 JSON.parse(localStorage.getItem("svmilk_customers")) || [];
 
+let products =
+JSON.parse(localStorage.getItem("svmilk_products")) || [
+
+{
+id:1,
+name:"Fresh Milk",
+price:60,
+stock:100,
+unit:"Litre"
+},
+
+{
+id:2,
+name:"Paneer",
+price:320,
+stock:30,
+unit:"Kg"
+},
+
+{
+id:3,
+name:"Butter",
+price:580,
+stock:25,
+unit:"Kg"
+},
+
+{
+id:4,
+name:"Curd",
+price:80,
+stock:50,
+unit:"Kg"
+}
+
+];
+
 let ledger =
 JSON.parse(localStorage.getItem("svmilk_ledger")) || [];
+
+let sales =
+JSON.parse(localStorage.getItem("svmilk_sales")) || [];
+
+let cart = [];
 
 
 function saveData(){
@@ -423,23 +599,31 @@ JSON.stringify(customers)
 );
 
 localStorage.setItem(
+"svmilk_products",
+JSON.stringify(products)
+);
+
+localStorage.setItem(
 "svmilk_ledger",
 JSON.stringify(ledger)
 );
 
-renderAll();
+localStorage.setItem(
+"svmilk_sales",
+JSON.stringify(sales)
+);
 
 }
 
 
 function openPage(page){
 
-document.querySelectorAll(".page")
-.forEach(function(p){
-p.classList.remove("active");
-});
+document
+.querySelectorAll(".page")
+.forEach(p => p.classList.remove("active"));
 
-document.getElementById(page)
+document
+.getElementById(page)
 .classList.add("active");
 
 renderAll();
@@ -452,10 +636,10 @@ function addCustomer(){
 let name =
 document.getElementById("customerName").value.trim();
 
-let phone =
-document.getElementById("customerPhone").value.trim();
+let mobile =
+document.getElementById("customerMobile").value.trim();
 
-if(name === ""){
+if(!name){
 
 alert("Please enter customer name");
 
@@ -465,24 +649,364 @@ return;
 
 customers.push({
 
+id:Date.now(),
+
 name:name,
-phone:phone
+
+mobile:mobile
 
 });
 
-document.getElementById("customerName").value="";
-document.getElementById("customerPhone").value="";
-
 saveData();
+
+document.getElementById("customerName").value="";
+
+document.getElementById("customerMobile").value="";
+
+renderAll();
 
 alert("Customer added successfully!");
 
 }
 
 
+function addProduct(){
+
+let name =
+document.getElementById("productName").value.trim();
+
+let price =
+Number(document.getElementById("productPrice").value);
+
+let stock =
+Number(document.getElementById("productStock").value);
+
+let unit =
+document.getElementById("productUnit").value;
+
+if(!name || price<=0 || stock<0){
+
+alert("Please enter valid product details");
+
+return;
+
+}
+
+products.push({
+
+id:Date.now(),
+
+name:name,
+
+price:price,
+
+stock:stock,
+
+unit:unit
+
+});
+
+saveData();
+
+document.getElementById("productName").value="";
+
+document.getElementById("productPrice").value="";
+
+document.getElementById("productStock").value="";
+
+renderAll();
+
+alert("Product added successfully!");
+
+}
+
+
+function addToCart(){
+
+let productId =
+Number(document.getElementById("saleProduct").value);
+
+let quantity =
+Number(document.getElementById("saleQuantity").value);
+
+let product =
+products.find(p => p.id === productId);
+
+if(!product){
+
+alert("Please select product");
+
+return;
+
+}
+
+if(quantity<=0){
+
+alert("Enter valid quantity");
+
+return;
+
+}
+
+if(quantity>product.stock){
+
+alert("Not enough stock available");
+
+return;
+
+}
+
+let existing =
+cart.find(item => item.productId === productId);
+
+if(existing){
+
+if(existing.quantity + quantity > product.stock){
+
+alert("Not enough stock available");
+
+return;
+
+}
+
+existing.quantity += quantity;
+
+}else{
+
+cart.push({
+
+productId:productId,
+
+quantity:quantity
+
+});
+
+}
+
+renderCart();
+
+}
+
+
+function removeFromCart(productId){
+
+cart =
+cart.filter(item => item.productId !== productId);
+
+renderCart();
+
+}
+
+
+function renderCart(){
+
+let container =
+document.getElementById("cartItems");
+
+let total = 0;
+
+if(cart.length===0){
+
+container.innerHTML =
+'<div class="empty">Cart is empty</div>';
+
+document.getElementById("cartTotal").innerText="0";
+
+return;
+
+}
+
+container.innerHTML="";
+
+cart.forEach(item=>{
+
+let product =
+products.find(p=>p.id===item.productId);
+
+let itemTotal =
+product.price * item.quantity;
+
+total += itemTotal;
+
+let div =
+document.createElement("div");
+
+div.className="cart-item";
+
+div.innerHTML=`
+
+<div>
+
+<strong>${product.name}</strong><br>
+
+${item.quantity} ${product.unit} × ₹${product.price}
+
+</div>
+
+<div>
+
+₹${itemTotal}
+
+<button
+class="btn red"
+style="margin-left:10px;padding:6px 10px;"
+onclick="removeFromCart(${product.id})">
+
+Remove
+
+</button>
+
+</div>
+
+`;
+
+container.appendChild(div);
+
+});
+
+document.getElementById("cartTotal").innerText =
+total;
+
+}
+
+
+function completeSale(){
+
+if(cart.length===0){
+
+alert("Cart is empty");
+
+return;
+
+}
+
+let customer =
+document.getElementById("saleCustomer").value;
+
+let paymentType =
+document.getElementById("paymentType").value;
+
+let total = 0;
+
+let items = [];
+
+for(let item of cart){
+
+let product =
+products.find(p=>p.id===item.productId);
+
+if(item.quantity > product.stock){
+
+alert("Stock not available for " + product.name);
+
+return;
+
+}
+
+let itemTotal =
+product.price * item.quantity;
+
+total += itemTotal;
+
+items.push({
+
+name:product.name,
+
+quantity:item.quantity,
+
+price:product.price,
+
+total:itemTotal
+
+});
+
+}
+
+for(let item of cart){
+
+let product =
+products.find(p=>p.id===item.productId);
+
+product.stock -= item.quantity;
+
+}
+
+
+sales.push({
+
+id:Date.now(),
+
+date:new Date().toLocaleString(),
+
+customer:customer || "Walk-in Customer",
+
+items:items,
+
+total:total,
+
+payment:paymentType
+
+});
+
+
+if(customer && paymentType==="Credit"){
+
+ledger.push({
+
+id:Date.now(),
+
+date:new Date().toLocaleString(),
+
+customer:customer,
+
+type:"credit",
+
+amount:total,
+
+description:"Sale - Dairy Products"
+
+});
+
+}
+
+
+if(customer && paymentType==="Payment"){
+
+ledger.push({
+
+id:Date.now(),
+
+date:new Date().toLocaleString(),
+
+customer:customer,
+
+type:"payment",
+
+amount:total,
+
+description:"Sale Payment"
+
+});
+
+}
+
+
+saveData();
+
+cart=[];
+
+renderAll();
+
+alert("Sale completed successfully!");
+
+openPage("sales");
+
+}
+
+
 function addLedgerEntry(){
 
-let customerIndex =
+let customer =
 document.getElementById("ledgerCustomer").value;
 
 let type =
@@ -494,7 +1018,7 @@ Number(document.getElementById("ledgerAmount").value);
 let description =
 document.getElementById("ledgerDescription").value;
 
-if(customerIndex === ""){
+if(!customer){
 
 alert("Please select customer");
 
@@ -502,9 +1026,9 @@ return;
 
 }
 
-if(amount <= 0){
+if(amount<=0){
 
-alert("Please enter valid amount");
+alert("Enter valid amount");
 
 return;
 
@@ -512,25 +1036,29 @@ return;
 
 ledger.push({
 
-customer:
-customers[customerIndex].name,
+id:Date.now(),
+
+date:new Date().toLocaleString(),
+
+customer:customer,
 
 type:type,
 
 amount:amount,
 
-description:description,
-
-date:new Date().toLocaleString("en-IN")
+description:description
 
 });
 
-document.getElementById("ledgerAmount").value="";
-document.getElementById("ledgerDescription").value="";
-
 saveData();
 
-alert("Ledger entry saved!");
+document.getElementById("ledgerAmount").value="";
+
+document.getElementById("ledgerDescription").value="";
+
+renderAll();
+
+alert("Ledger entry added!");
 
 }
 
@@ -539,19 +1067,17 @@ function getBalance(customerName){
 
 let balance=0;
 
-ledger.forEach(function(item){
+ledger.forEach(item=>{
 
-if(item.customer === customerName){
+if(item.customer===customerName){
 
-if(item.type === "credit"){
+if(item.type==="credit"){
 
-balance += item.amount;
+balance += Number(item.amount);
 
-}
+}else{
 
-if(item.type === "payment"){
-
-balance -= item.amount;
+balance -= Number(item.amount);
 
 }
 
@@ -564,132 +1090,268 @@ return balance;
 }
 
 
-function renderAll(){
+function renderCustomers(){
 
-let totalCredit=0;
-let totalPayments=0;
+let table =
+document.getElementById("customerTable");
 
-customers.forEach(function(customer){
+table.innerHTML="";
 
-let balance =
-getBalance(customer.name);
-
-if(balance > 0){
-
-totalCredit += balance;
-
-}
-
-});
-
-ledger.forEach(function(item){
-
-if(item.type === "payment"){
-
-totalPayments += item.amount;
-
-}
-
-});
-
-
-document.getElementById("totalCustomers")
-.innerText=customers.length;
-
-
-document.getElementById("totalCredit")
-.innerText="₹"+totalCredit;
-
-
-document.getElementById("totalPayments")
-.innerText="₹"+totalPayments;
-
-
-/* CUSTOMER TABLE */
-
-let customerHTML="";
-
-customers.forEach(function(customer){
+customers.forEach(customer=>{
 
 let balance =
 getBalance(customer.name);
 
-customerHTML += `
+let row =
+document.createElement("tr");
 
-<tr>
+row.innerHTML=`
 
 <td>${customer.name}</td>
 
-<td>${customer.phone || "-"}</td>
+<td>${customer.mobile}</td>
 
-<td>
-<strong>₹${balance}</strong>
-</td>
-
-</tr>
+<td>₹${balance}</td>
 
 `;
 
+table.appendChild(row);
+
 });
 
-document.getElementById("customerTable")
-.innerHTML=customerHTML;
+}
 
 
-/* CUSTOMER DROPDOWN */
+function renderCustomerDropdowns(){
 
-let options =
+let saleCustomer =
+document.getElementById("saleCustomer");
+
+let ledgerCustomer =
+document.getElementById("ledgerCustomer");
+
+saleCustomer.innerHTML =
+'<option value="">Walk-in Customer</option>';
+
+ledgerCustomer.innerHTML =
 '<option value="">Select Customer</option>';
 
-customers.forEach(function(customer,index){
+customers.forEach(customer=>{
 
-options += `
-
-<option value="${index}">
+saleCustomer.innerHTML +=
+`<option value="${customer.name}">
 ${customer.name}
-</option>
+</option>`;
 
-`;
+ledgerCustomer.innerHTML +=
+`<option value="${customer.name}">
+${customer.name}
+</option>`;
 
 });
 
-document.getElementById("ledgerCustomer")
-.innerHTML=options;
+}
 
 
-/* LEDGER TABLE */
+function renderProducts(){
 
-let ledgerHTML="";
+let grid =
+document.getElementById("productGrid");
 
-ledger.slice().reverse().forEach(function(item){
+grid.innerHTML="";
 
-let typeText =
-item.type === "credit"
+products.forEach(product=>{
+
+let div =
+document.createElement("div");
+
+div.className="product";
+
+div.innerHTML=`
+
+<h3>🥛 ${product.name}</h3>
+
+<div class="price">
+₹${product.price} / ${product.unit}
+</div>
+
+<div class="stock">
+Stock: ${product.stock} ${product.unit}
+</div>
+
+<span class="badge">
+Available
+</span>
+
+`;
+
+grid.appendChild(div);
+
+});
+
+}
+
+
+function renderProductDropdown(){
+
+let select =
+document.getElementById("saleProduct");
+
+select.innerHTML =
+'<option value="">Select Product</option>';
+
+products.forEach(product=>{
+
+select.innerHTML +=
+`<option value="${product.id}">
+${product.name} - ₹${product.price}/${product.unit}
+</option>`;
+
+});
+
+}
+
+
+function renderSales(){
+
+let table =
+document.getElementById("salesTable");
+
+table.innerHTML="";
+
+sales.slice().reverse().forEach(sale=>{
+
+let items =
+sale.items.map(item =>
+`${item.name} × ${item.quantity}`
+).join(", ");
+
+let row =
+document.createElement("tr");
+
+row.innerHTML=`
+
+<td>${sale.date}</td>
+
+<td>${sale.customer}</td>
+
+<td>${items}</td>
+
+<td>₹${sale.total}</td>
+
+<td>${sale.payment}</td>
+
+`;
+
+table.appendChild(row);
+
+});
+
+}
+
+
+function renderLedger(){
+
+let table =
+document.getElementById("ledgerTable");
+
+table.innerHTML="";
+
+ledger.slice().reverse().forEach(item=>{
+
+let type =
+item.type==="credit"
 ? "Udhaari"
 : "Payment";
 
-ledgerHTML += `
+let row =
+document.createElement("tr");
 
-<tr>
+row.innerHTML=`
 
 <td>${item.date}</td>
 
 <td>${item.customer}</td>
 
-<td>${typeText}</td>
+<td>${type}</td>
 
 <td>₹${item.amount}</td>
 
-<td>${item.description || "-"}</td>
-
-</tr>
+<td>${item.description || ""}</td>
 
 `;
 
+table.appendChild(row);
+
 });
 
-document.getElementById("ledgerTable")
-.innerHTML=ledgerHTML;
+}
+
+
+function renderDashboard(){
+
+let totalSales =
+sales.reduce(
+(sum,sale)=>sum + Number(sale.total),
+0
+);
+
+let totalCredit =
+ledger
+.filter(x=>x.type==="credit")
+.reduce(
+(sum,x)=>sum + Number(x.amount),
+0
+);
+
+let totalPayments =
+ledger
+.filter(x=>x.type==="payment")
+.reduce(
+(sum,x)=>sum + Number(x.amount),
+0
+);
+
+document.getElementById(
+"dashboardCustomers"
+).innerText=customers.length;
+
+document.getElementById(
+"dashboardProducts"
+).innerText=products.length;
+
+document.getElementById(
+"dashboardSales"
+).innerText="₹"+totalSales;
+
+document.getElementById(
+"dashboardCredit"
+).innerText="₹"+totalCredit;
+
+document.getElementById(
+"dashboardPayments"
+).innerText="₹"+totalPayments;
+
+}
+
+
+function renderAll(){
+
+renderCustomers();
+
+renderCustomerDropdowns();
+
+renderProducts();
+
+renderProductDropdown();
+
+renderSales();
+
+renderLedger();
+
+renderCart();
+
+renderDashboard();
 
 }
 
