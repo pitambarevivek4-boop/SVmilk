@@ -257,6 +257,8 @@ th{
     <button onclick="openPage('sales')">🛒 Sales</button>
     <button onclick="openPage('cart')">🛍️ Cart</button>
     <button onclick="openPage('ledger')">💳 Credit Ledger</button>
+    <button onclick="openPage('suppliers')">🏭 Suppliers</button>
+<button onclick="openPage('purchases')">📥 Purchases</button>
 </nav>
 
 <div class="container">
@@ -483,7 +485,136 @@ Complete Sale
 
 
 <!-- LEDGER -->
+<!-- SUPPLIERS -->
 
+<section id="suppliers" class="page">
+
+<h2>Supplier Management</h2>
+
+<div class="form-box">
+
+<h3>Add Supplier</h3>
+
+<input id="supplierName" placeholder="Supplier Name">
+
+<input id="supplierMobile" placeholder="Mobile Number">
+
+<input id="supplierCompany" placeholder="Company / Shop Name">
+
+<button class="btn" onclick="addSupplier()">
+Add Supplier
+</button>
+
+</div>
+
+<div class="form-box">
+
+<h3>Supplier List</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Name</th>
+<th>Mobile</th>
+<th>Company</th>
+<th>Payable</th>
+</tr>
+
+</thead>
+
+<tbody id="supplierTable"></tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- PURCHASES -->
+
+<section id="purchases" class="page">
+
+<h2>Purchase Management</h2>
+
+<div class="form-box">
+
+<h3>New Purchase</h3>
+
+<label>Supplier</label>
+
+<select id="purchaseSupplier"></select>
+
+<label>Product</label>
+
+<select id="purchaseProduct"></select>
+
+<label>Quantity</label>
+
+<input
+id="purchaseQuantity"
+type="number"
+min="1"
+placeholder="Quantity"
+>
+
+<label>Purchase Price</label>
+
+<input
+id="purchasePrice"
+type="number"
+min="0"
+placeholder="Purchase Price"
+>
+
+<label>Payment Type</label>
+
+<select id="purchasePayment">
+
+<option value="Paid">Paid</option>
+
+<option value="Payable">Payable / Udhaari</option>
+
+</select>
+
+<button class="btn green" onclick="addPurchase()">
+
+Save Purchase
+
+</button>
+
+</div>
+
+
+<div class="form-box">
+
+<h3>Purchase History</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Date</th>
+<th>Supplier</th>
+<th>Product</th>
+<th>Quantity</th>
+<th>Price</th>
+<th>Total</th>
+<th>Payment</th>
+</tr>
+
+</thead>
+
+<tbody id="purchaseTable"></tbody>
+
+</table>
+
+</div>
+
+</section>
 <section id="ledger" class="page">
 
 <h2>Credit Ledger / Udhaari</h2>
@@ -589,7 +720,11 @@ let sales =
 JSON.parse(localStorage.getItem("svmilk_sales")) || [];
 
 let cart = [];
+let suppliers =
+JSON.parse(localStorage.getItem("svmilk_suppliers")) || [];
 
+let purchases =
+JSON.parse(localStorage.getItem("svmilk_purchases")) || [];
 
 function saveData(){
 
@@ -612,7 +747,15 @@ localStorage.setItem(
 "svmilk_sales",
 JSON.stringify(sales)
 );
+localStorage.setItem(
+"svmilk_suppliers",
+JSON.stringify(suppliers)
+);
 
+localStorage.setItem(
+"svmilk_purchases",
+JSON.stringify(purchases)
+);
 }
 
 
@@ -1350,6 +1493,12 @@ renderSales();
 renderLedger();
 
 renderCart();
+
+renderSuppliers();
+
+renderPurchases();
+
+renderPurchaseDropdowns();
 
 renderDashboard();
 
