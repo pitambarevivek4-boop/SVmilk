@@ -1,127 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SVMilk - Smart Dairy Business</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SVMilk - Smart Dairy Business</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f8f7;
-            color: #1f2937;
-        }
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f8f7;
+    color:#1f2937;
+}
 
-        header {
-            background: #087f5b;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+header{
+    background:#087f5b;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
 
-        header h1 {
-            font-size: 32px;
-        }
+header h1{font-size:32px}
+header p{margin-top:6px}
 
-        header p {
-            margin-top: 6px;
-        }
+nav{
+    background:white;
+    padding:12px;
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    justify-content:center;
+    box-shadow:0 2px 8px #0001;
+}
 
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 25px;
-        }
+nav button{
+    border:0;
+    padding:10px 15px;
+    border-radius:8px;
+    background:#e8f5f1;
+    color:#087f5b;
+    font-weight:bold;
+    cursor:pointer;
+}
 
-        .dashboard {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
-            margin-top: 25px;
-        }
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:25px;
+}
 
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-        }
+.section{
+    margin-top:25px;
+}
 
-        .card h3 {
-            color: #087f5b;
-            margin-bottom: 10px;
-        }
+.dashboard{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    margin-top:15px;
+}
 
-        .card p {
-            font-size: 25px;
-            font-weight: bold;
-        }
+.card{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 3px 10px #00000010;
+}
 
-        .section {
-            margin-top: 30px;
-        }
+.card h3{
+    color:#087f5b;
+    margin-bottom:10px;
+}
 
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
+.big{
+    font-size:25px;
+    font-weight:bold;
+}
 
-        .product {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-        }
+input,select{
+    width:100%;
+    padding:11px;
+    margin:6px 0;
+    border:1px solid #ccd5d2;
+    border-radius:8px;
+}
 
-        .product .icon {
-            font-size: 45px;
-            margin-bottom: 10px;
-        }
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
 
-        .product h3 {
-            margin-bottom: 8px;
-        }
+button.primary{
+    background:#087f5b;
+    color:white;
+    border:0;
+    padding:11px 18px;
+    border-radius:8px;
+    cursor:pointer;
+    margin-top:8px;
+}
 
-        .price {
-            color: #087f5b;
-            font-weight: bold;
-            font-size: 18px;
-        }
+table{
+    width:100%;
+    border-collapse:collapse;
+}
 
-        .ledger {
-            margin-top: 15px;
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-        }
+th,td{
+    padding:11px;
+    border-bottom:1px solid #eee;
+    text-align:left;
+}
 
-        .ledger button {
-            margin-top: 15px;
-            padding: 10px 18px;
-            border: none;
-            border-radius: 8px;
-            background: #087f5b;
-            color: white;
-            cursor: pointer;
-        }
+.table-box{
+    background:white;
+    padding:15px;
+    border-radius:12px;
+    overflow:auto;
+}
 
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            color: #666;
-        }
-    </style>
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+
+.product{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 3px 10px #00000010;
+}
+
+.icon{
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+.price{
+    color:#087f5b;
+    font-weight:bold;
+    margin-top:8px;
+}
+
+.badge{
+    display:inline-block;
+    padding:5px 9px;
+    background:#e8f5f1;
+    color:#087f5b;
+    border-radius:15px;
+    font-size:12px;
+}
+
+.page{
+    display:none;
+}
+
+.page.active{
+    display:block;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    color:#777;
+}
+
+@media(max-width:600px){
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+}
+</style>
 </head>
 
 <body>
@@ -131,100 +183,518 @@
     <p>Fresh Dairy • Smart Business</p>
 </header>
 
+<nav>
+    <button onclick="openPage('dashboard')">Dashboard</button>
+    <button onclick="openPage('customers')">Customers</button>
+    <button onclick="openPage('ledger')">Credit Ledger</button>
+    <button onclick="openPage('products')">Products</button>
+</nav>
+
 <div class="container">
 
-    <h2>Business Dashboard</h2>
+<!-- DASHBOARD -->
 
-    <div class="dashboard">
+<div id="dashboard" class="page active">
 
-        <div class="card">
-            <h3>Today's Sales</h3>
-            <p>₹0</p>
-        </div>
+<h2>Business Dashboard</h2>
 
-        <div class="card">
-            <h3>Today's Purchase</h3>
-            <p>₹0</p>
-        </div>
+<div class="dashboard">
 
-        <div class="card">
-            <h3>Customers</h3>
-            <p>0</p>
-        </div>
+<div class="card">
+<h3>Customers</h3>
+<div class="big" id="totalCustomers">0</div>
+</div>
 
-        <div class="card">
-            <h3>Outstanding Udhaari</h3>
-            <p>₹0</p>
-        </div>
+<div class="card">
+<h3>Total Udhaari</h3>
+<div class="big" id="totalCredit">₹0</div>
+</div>
 
-    </div>
+<div class="card">
+<h3>Total Payments</h3>
+<div class="big" id="totalPayments">₹0</div>
+</div>
 
-    <div class="section">
+<div class="card">
+<h3>Products</h3>
+<div class="big">4</div>
+</div>
 
-        <h2>Dairy Products</h2>
+</div>
 
-        <div class="products">
+<div class="section card">
 
-            <div class="product">
-                <div class="icon">🥛</div>
-                <h3>Fresh Milk</h3>
-                <p class="price">₹60 / Litre</p>
-            </div>
+<h3>Welcome to SVMilk</h3>
 
-            <div class="product">
-                <div class="icon">🧀</div>
-                <h3>Paneer</h3>
-                <p class="price">₹320 / Kg</p>
-            </div>
+<p>
+SVMilk is a smart dairy business management platform.
+Manage customers, milk sales and credit ledger from one place.
+</p>
 
-            <div class="product">
-                <div class="icon">🧈</div>
-                <h3>Butter</h3>
-                <p class="price">₹580 / Kg</p>
-            </div>
+</div>
 
-            <div class="product">
-                <div class="icon">🥣</div>
-                <h3>Curd</h3>
-                <p class="price">₹80 / Kg</p>
-            </div>
+</div>
 
-        </div>
 
-    </div>
+<!-- CUSTOMERS -->
 
-    <div class="section">
+<div id="customers" class="page">
 
-        <h2>💰 Credit Ledger / Udhaari</h2>
+<h2>👤 Customer Management</h2>
 
-        <div class="ledger">
+<div class="section card">
 
-            <h3>Customer Credit Management</h3>
+<h3>Add New Customer</h3>
 
-            <p>
-                Track customer purchases, payments and remaining
-                outstanding balance.
-            </p>
+<div class="form-grid">
 
-            <button onclick="showMessage()">
-                Open Credit Ledger
-            </button>
+<div>
+<label>Customer Name</label>
+<input id="customerName" placeholder="Enter customer name">
+</div>
 
-        </div>
+<div>
+<label>Mobile Number</label>
+<input id="customerPhone" placeholder="Enter mobile number">
+</div>
 
-    </div>
+</div>
+
+<button class="primary" onclick="addCustomer()">
++ Add Customer
+</button>
+
+</div>
+
+<div class="section">
+
+<h3>Customer List</h3>
+
+<div class="table-box">
+
+<table>
+
+<thead>
+<tr>
+<th>Name</th>
+<th>Mobile</th>
+<th>Balance</th>
+</tr>
+</thead>
+
+<tbody id="customerTable"></tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CREDIT LEDGER -->
+
+<div id="ledger" class="page">
+
+<h2>💰 Credit Ledger / Udhaari</h2>
+
+<div class="section card">
+
+<h3>New Ledger Entry</h3>
+
+<label>Customer</label>
+
+<select id="ledgerCustomer">
+<option value="">Select Customer</option>
+</select>
+
+<label>Transaction Type</label>
+
+<select id="ledgerType">
+<option value="credit">Credit / Udhaari Added</option>
+<option value="payment">Payment Received</option>
+</select>
+
+<label>Amount</label>
+
+<input id="ledgerAmount" type="number" placeholder="Enter amount">
+
+<label>Description</label>
+
+<input id="ledgerDescription" placeholder="Milk / Paneer / Payment etc.">
+
+<button class="primary" onclick="addLedgerEntry()">
+Save Transaction
+</button>
+
+</div>
+
+<div class="section">
+
+<h3>Transaction History</h3>
+
+<div class="table-box">
+
+<table>
+
+<thead>
+<tr>
+<th>Date</th>
+<th>Customer</th>
+<th>Type</th>
+<th>Amount</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody id="ledgerTable"></tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCTS -->
+
+<div id="products" class="page">
+
+<h2>🥛 Dairy Products</h2>
+
+<div class="products">
+
+<div class="product">
+<div class="icon">🥛</div>
+<h3>Fresh Milk</h3>
+<p class="price">₹60 / Litre</p>
+<span class="badge">Available</span>
+</div>
+
+<div class="product">
+<div class="icon">🧀</div>
+<h3>Paneer</h3>
+<p class="price">₹320 / Kg</p>
+<span class="badge">Available</span>
+</div>
+
+<div class="product">
+<div class="icon">🧈</div>
+<h3>Butter</h3>
+<p class="price">₹580 / Kg</p>
+<span class="badge">Available</span>
+</div>
+
+<div class="product">
+<div class="icon">🥣</div>
+<h3>Curd</h3>
+<p class="price">₹80 / Kg</p>
+<span class="badge">Available</span>
+</div>
+
+</div>
+
+</div>
 
 </div>
 
 <footer>
-    © 2026 SVMilk | Fresh Dairy • Smart Business
+© 2026 SVMilk • Fresh Dairy • Smart Business
 </footer>
+
 
 <script>
 
-function showMessage() {
-    alert("SVMilk Credit Ledger will be added in the next development step.");
+let customers =
+JSON.parse(localStorage.getItem("svmilk_customers")) || [];
+
+let ledger =
+JSON.parse(localStorage.getItem("svmilk_ledger")) || [];
+
+
+function saveData(){
+
+localStorage.setItem(
+"svmilk_customers",
+JSON.stringify(customers)
+);
+
+localStorage.setItem(
+"svmilk_ledger",
+JSON.stringify(ledger)
+);
+
+renderAll();
+
 }
+
+
+function openPage(page){
+
+document.querySelectorAll(".page")
+.forEach(function(p){
+p.classList.remove("active");
+});
+
+document.getElementById(page)
+.classList.add("active");
+
+renderAll();
+
+}
+
+
+function addCustomer(){
+
+let name =
+document.getElementById("customerName").value.trim();
+
+let phone =
+document.getElementById("customerPhone").value.trim();
+
+if(name === ""){
+
+alert("Please enter customer name");
+
+return;
+
+}
+
+customers.push({
+
+name:name,
+phone:phone
+
+});
+
+document.getElementById("customerName").value="";
+document.getElementById("customerPhone").value="";
+
+saveData();
+
+alert("Customer added successfully!");
+
+}
+
+
+function addLedgerEntry(){
+
+let customerIndex =
+document.getElementById("ledgerCustomer").value;
+
+let type =
+document.getElementById("ledgerType").value;
+
+let amount =
+Number(document.getElementById("ledgerAmount").value);
+
+let description =
+document.getElementById("ledgerDescription").value;
+
+if(customerIndex === ""){
+
+alert("Please select customer");
+
+return;
+
+}
+
+if(amount <= 0){
+
+alert("Please enter valid amount");
+
+return;
+
+}
+
+ledger.push({
+
+customer:
+customers[customerIndex].name,
+
+type:type,
+
+amount:amount,
+
+description:description,
+
+date:new Date().toLocaleString("en-IN")
+
+});
+
+document.getElementById("ledgerAmount").value="";
+document.getElementById("ledgerDescription").value="";
+
+saveData();
+
+alert("Ledger entry saved!");
+
+}
+
+
+function getBalance(customerName){
+
+let balance=0;
+
+ledger.forEach(function(item){
+
+if(item.customer === customerName){
+
+if(item.type === "credit"){
+
+balance += item.amount;
+
+}
+
+if(item.type === "payment"){
+
+balance -= item.amount;
+
+}
+
+}
+
+});
+
+return balance;
+
+}
+
+
+function renderAll(){
+
+let totalCredit=0;
+let totalPayments=0;
+
+customers.forEach(function(customer){
+
+let balance =
+getBalance(customer.name);
+
+if(balance > 0){
+
+totalCredit += balance;
+
+}
+
+});
+
+ledger.forEach(function(item){
+
+if(item.type === "payment"){
+
+totalPayments += item.amount;
+
+}
+
+});
+
+
+document.getElementById("totalCustomers")
+.innerText=customers.length;
+
+
+document.getElementById("totalCredit")
+.innerText="₹"+totalCredit;
+
+
+document.getElementById("totalPayments")
+.innerText="₹"+totalPayments;
+
+
+/* CUSTOMER TABLE */
+
+let customerHTML="";
+
+customers.forEach(function(customer){
+
+let balance =
+getBalance(customer.name);
+
+customerHTML += `
+
+<tr>
+
+<td>${customer.name}</td>
+
+<td>${customer.phone || "-"}</td>
+
+<td>
+<strong>₹${balance}</strong>
+</td>
+
+</tr>
+
+`;
+
+});
+
+document.getElementById("customerTable")
+.innerHTML=customerHTML;
+
+
+/* CUSTOMER DROPDOWN */
+
+let options =
+'<option value="">Select Customer</option>';
+
+customers.forEach(function(customer,index){
+
+options += `
+
+<option value="${index}">
+${customer.name}
+</option>
+
+`;
+
+});
+
+document.getElementById("ledgerCustomer")
+.innerHTML=options;
+
+
+/* LEDGER TABLE */
+
+let ledgerHTML="";
+
+ledger.slice().reverse().forEach(function(item){
+
+let typeText =
+item.type === "credit"
+? "Udhaari"
+: "Payment";
+
+ledgerHTML += `
+
+<tr>
+
+<td>${item.date}</td>
+
+<td>${item.customer}</td>
+
+<td>${typeText}</td>
+
+<td>₹${item.amount}</td>
+
+<td>${item.description || "-"}</td>
+
+</tr>
+
+`;
+
+});
+
+document.getElementById("ledgerTable")
+.innerHTML=ledgerHTML;
+
+}
+
+
+renderAll();
 
 </script>
 
